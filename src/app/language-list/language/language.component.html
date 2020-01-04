@@ -1,0 +1,33 @@
+<div class="row pane-style">
+        <div class="col-md-12">
+            <div class="row right-pane">
+                <div class="col-md-2">
+                    <form [formGroup]="countryListForm">
+                        <select formControlName="ddlCountry" class="form-control" (change)="onCountryChange()">
+                            <option [ngValue]="null" disabled selected>Select Country</option>
+                            <option *ngFor="let country of countryList" [value]="country.alpha3Code">{{country.name}}</option>
+                        </select>
+                    </form>
+                </div>
+            </div>
+            <div class="row p-5">
+                <h3 class="title">Language List</h3>
+            </div>
+            <div class="row">
+                <div class="col-md-offset-3">
+                    <table class="table table-bordered table-striped table-style">
+                        <tr class="bg-default th-border-bottom">
+                            <th>#</th>
+                            <th>Name</th>
+                            <th>Native Name</th>
+                        </tr>
+                        <tr *ngFor="let language of selectedLanguageDetails; let i = index">
+                            <td>{{i + 1}}</td>
+                            <td>{{language?.name}}</td>
+                            <td>{{language?.nativeName}}</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>

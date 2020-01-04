@@ -1,0 +1,51 @@
+<div class="row pane-style">
+    <div class="col-md-12">
+        <div class="row right-pane">
+            <div class="col-md-2">
+                <form [formGroup]="countryListForm">
+                    <select formControlName="ddlCountry" class="form-control" (change)="onCountryChange()">
+                        <option [ngValue]="null" disabled selected>Select Country</option>
+                        <option *ngFor="let country of countryList" [value]="country.alpha3Code">{{country.name}}</option>
+                    </select>
+                </form>
+            </div>
+        </div>
+        <div class="row p-5">
+            <h3 class="title">Home - Country details</h3>
+        </div>
+        <div class="row">
+            <div class="col-md-offset-3">
+                <table class="table table-bordered table-striped table-style">
+                    <tr>
+                        <th>CountryName</th>
+                        <td>{{selectedCountryDetails?.name}}</td>
+                    </tr>
+                    <tr>
+                        <th>Capital</th>
+                        <td>{{selectedCountryDetails?.capital}}</td>
+                    </tr>
+                    <tr>
+                        <th>Region</th>
+                        <td>{{selectedCountryDetails?.region}}</td>
+                    </tr>
+                    <tr>
+                        <th>Sub Region</th>
+                        <td>{{selectedCountryDetails?.subregion}}</td>
+                    </tr>
+                    <tr>
+                        <th>Population</th>
+                        <td>{{selectedCountryDetails?.population}}</td>
+                    </tr>
+                    <tr>
+                        <th>Area</th>
+                        <td>{{selectedCountryDetails?.area}}</td>
+                    </tr>
+                    <tr>
+                        <th>Alpha3Code</th>
+                        <td>{{selectedCountryDetails?.alpha3Code}}</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>

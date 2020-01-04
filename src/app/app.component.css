@@ -1,0 +1,12 @@
+.pane-style {
+    height: 100vh;
+    border: 1px solid black;
+    padding-bottom: 5px;
+    padding-top: 5px;
+    
+}
+
+ul {
+    padding: 0px;
+    list-style-type: none;
+  }
